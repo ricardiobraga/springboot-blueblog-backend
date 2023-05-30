@@ -13,7 +13,7 @@ Como tenho focado meus estudos em Java e Springboot desde o começo de 2023, dec
 - JAVA 17
 - Spring boot 3.10
 - Postgres
-- JPA HIBERNATE
+- JPA com HIBERNATE
 
 # INSTALAÇÃO
 ## 1 - clone a aplicação

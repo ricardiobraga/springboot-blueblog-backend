@@ -1,12 +1,12 @@
 package br.com.ricardobraga.blog.services;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 
 
@@ -34,11 +34,13 @@ public class PostService {
 
     }
 
+    
  
 
     
     public void insert(Post post) {
-        Post newPost = new Post(null, post.getUsername(), Instant.now(), post.getTitle(), post.getContent());
+        
+        Post newPost = new Post(null, post.getUsername(), Instant.now().plus(3, ChronoUnit.HOURS), post.getTitle(), post.getContent());
         repository.save(newPost);       
 
     }

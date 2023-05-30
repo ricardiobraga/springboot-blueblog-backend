@@ -35,9 +35,9 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/blog
 
 # API ROUTES
 ```
-GET /api//api/posts
+GET /api/api/posts
 
-POST /api//api/posts
+POST /api/api/posts
 
 PATCH /api/posts/{postId}
 

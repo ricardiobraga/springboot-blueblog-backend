@@ -69,11 +69,15 @@ public class PostResource {
     }
 
     
-    @DeleteMapping
-    public void deleteById(@RequestBody Post post) {
-
-        service.deleteById(post.getId());
-
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {        
+        try{
+            service.deleteById(id);
+        } catch (NoSuchElementException e) {            
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Post with id %d not found", id));
+        }
     }
+
+    
 
 }

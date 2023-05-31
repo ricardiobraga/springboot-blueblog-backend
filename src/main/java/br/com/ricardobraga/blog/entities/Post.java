@@ -2,6 +2,7 @@ package br.com.ricardobraga.blog.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.time.ZonedDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ public class Post implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    private Instant created_dateTime;
+    private ZonedDateTime created_dateTime;
     private String title;
     private String content;
 
@@ -28,7 +29,7 @@ public class Post implements Serializable {
 
     }
 
-    public Post(Long id, String username, Instant created_dateTime, String title, String content) {
+    public Post(Long id, String username, ZonedDateTime created_dateTime, String title, String content) {
         this.id = id;
         this.username = username;
         this.created_dateTime = created_dateTime;
@@ -52,11 +53,11 @@ public class Post implements Serializable {
         this.username = username;
     }
 
-    public Instant getCreated_dateTime() {
+    public ZonedDateTime getCreated_dateTime() {
         return created_dateTime;
     }
 
-    public void setCreated_dateTime(Instant created_dateTime) {
+    public void setCreated_dateTime(ZonedDateTime created_dateTime) {
         this.created_dateTime = created_dateTime;
     }
 

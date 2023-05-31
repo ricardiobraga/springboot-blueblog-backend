@@ -1,6 +1,8 @@
 package br.com.ricardobraga.blog.services;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class PostService {
     
     public void insert(Post post) {
         
-        Post newPost = new Post(null, post.getUsername(), Instant.now(), post.getTitle(), post.getContent());
+        Post newPost = new Post(null, post.getUsername(), ZonedDateTime.now(ZoneId.of("America/Sao_Paulo")), post.getTitle(), post.getContent());
         repository.save(newPost);       
 
     }

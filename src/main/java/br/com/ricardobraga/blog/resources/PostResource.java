@@ -31,13 +31,13 @@ public class PostResource {
     @Autowired
     PostService service;
 
-    @CrossOrigin(origins = "https://blueblog-frontend.vercel.app")
+    //@CrossOrigin(origins = "https://blueblog-frontend.vercel.app")
     @GetMapping
     public List<Post> findAll() {
         return service.findAll();
     }
 
-    @CrossOrigin(origins = "https://blueblog-frontend.vercel.app")
+    
     @GetMapping("/{id}")
     public ResponseEntity<Post> findById(@PathVariable Long id) {
         try {
@@ -47,9 +47,9 @@ public class PostResource {
             System.out.println("TESTE");
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Post with id %d not found", id));
         }
-    }
+    }    
 
-    @CrossOrigin(origins = "https://blueblog-frontend.vercel.app")
+    
     @PatchMapping("/{id}")
     public void update(@PathVariable Long id, @RequestBody Post post) {
         try{
@@ -61,7 +61,7 @@ public class PostResource {
         }
     }
     
-    @CrossOrigin(origins = "https://blueblog-frontend.vercel.app")
+    
     @PostMapping()
     public void insert(@RequestBody Post post) {
 
@@ -69,7 +69,7 @@ public class PostResource {
 
     }
 
-    @CrossOrigin(origins = "https://blueblog-frontend.vercel.app")
+    
     @DeleteMapping
     public void deleteById(@RequestBody Post post) {
 

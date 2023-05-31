@@ -55,8 +55,7 @@ public class PostResource {
         try{
 
             service.update(id, post);
-        } catch (NoSuchElementException e) {
-            System.out.println("TESTE");
+        } catch (NoSuchElementException e) {            
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Post with id %d not found", id));
         }
     }
